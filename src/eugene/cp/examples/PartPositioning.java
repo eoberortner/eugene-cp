@@ -73,8 +73,7 @@ public class PartPositioning {
 
 			/*
 			 * A NEXTTO B
-			 */
-			
+			 */			
 			store.impose(new XplusCeqZ(idxA, 1, idxB));
 		}
 		
@@ -93,7 +92,7 @@ public class PartPositioning {
     	search.getSolutionListener().searchAll(true);   
 
 //        search.setPrintInfo(true);
-        search.getSolutionListener().recordSolutions(false);
+        search.getSolutionListener().recordSolutions(true);
                 
 		long T1 = System.nanoTime();
 
@@ -110,8 +109,8 @@ public class PartPositioning {
 		System.out.println("processing time: "+nProcessing+"sec");
 
 		// print all solutions
-//		printSolutions(
-//				search.getSolutionListener().getSolutions());
+		printSolutions(
+				search.getSolutionListener().getSolutions());
 	}
 	
 	private void printSolutions(Domain[][] domains) {
